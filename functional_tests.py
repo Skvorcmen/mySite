@@ -14,7 +14,7 @@ class BasicInstallTest(unittest.TestCase):
     def test_home_page_header(self):
         self.browser.get("http://127.0.0.1:8000")
         header = self.browser.find_element(By.TAG_NAME, 'h1').text
-        self.assertIn("Василий Скворцов", header)
+        self.assertIn("Школа плавания iSwim", header)
 
     def test_home_page_blog(self):
         self.browser.get("http://127.0.0.1:8000")
@@ -29,10 +29,9 @@ class BasicInstallTest(unittest.TestCase):
             'article-title')
         article_text = self.browser.find_element(
             By.CLASS_NAME,
-            'article-text')
+            'article-summary')
         self.assertTrue(article_title)
         self.assertTrue(article_text)
-
 
     def tearDown(self):
         self.browser.quit()

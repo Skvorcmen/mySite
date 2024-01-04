@@ -1,0 +1,21 @@
+<html>
+    <title>Сайт Василия Скворцова</title>
+    <h1>Школа плавания iSwim</h1>
+
+    <div class='article-list'>
+        {% for article in articles %}
+            <div class="article">
+                <h2 class="article-title">{{article.title}}</h2>
+                <p class="article-summary">{{article.summary}} 1</p>
+            </div>
+        {% endfor %}
+
+
+
+<!--        <div class="article">-->
+<!--            <h2 class="article-title">Заголовок статьи 2</h2>-->
+<!--            <p class="article-summary">Описание статьи 2</p>-->
+<!--        </div>-->
+    </div>
+
+</html>
