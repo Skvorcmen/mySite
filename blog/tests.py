@@ -3,9 +3,9 @@ from django.test import TestCase
 from blog.views import home_page, article_page
 from blog.models import Article
 from django.http import HttpRequest
-from django.core.files import File
-from django.test import TestCase
-from django.urls import reverse
+# from django.core.files import File
+# from django.test import TestCase
+# from django.urls import reverse
 from datetime import datetime
 import pytz
 

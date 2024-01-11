@@ -8,7 +8,17 @@
         <link href="{% static 'blog/styles.css' %}" rel="stylesheet">
     </head>
     <body>
-        {% block content %}
-        {% endblock %}
+        <div class="container">
+            <div class="row_page_header">
+                <div class="col">
+                    <div class='avatar-top'>
+                        <img src='{% static 'img/avatar.jpeg' %}' />
+                        <span class='author-name'>Василий Скворцов</span>
+                    </div>
+                </div>
+            </div>
+            {% block content %}
+            {% endblock %}
+        </div>
     </body>
 </html>
