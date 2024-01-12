@@ -1,6 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-import unittest
+# import unittest
 from django.test import LiveServerTestCase
 from blog.models import Article
 from datetime import datetime
@@ -65,7 +65,5 @@ class BasicInstallTest(LiveServerTestCase):
             'article-title')
         self.assertEqual(article_title_text, article_page_title.text)
 
-
     def tearDown(self):
         self.browser.quit()
- 

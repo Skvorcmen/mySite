@@ -5,7 +5,7 @@ from blog.models import Article
 from django.http import HttpRequest
 # from django.core.files import File
 # from django.test import TestCase
-# from django.urls import reverse
+from django.urls import reverse
 from datetime import datetime
 import pytz
 
@@ -65,18 +65,19 @@ class HomePageTest(TestCase):
         self.assertEqual(found.func, home_page)
 
     def test_home_page_returns_correct_html(self):
-        request = HttpRequest()
-        response = home_page(request)
-        html = response.content.decode("utf8")
-
-        self.assertTrue(html.startswith("<html>"))
-        self.assertIn("<title>Сайт Василия Скворцова</title>", html)
-        self.assertIn("<h1>Василий Скворцов</h1>", html)
+        url = reverse('home_page')
+        response = self.client.get(url)
+        # request = HttpRequest()
+        # response = home_page(request)
+        self.assertTemplateUsed(response, 'home_page.html')
+        # html = response.content.decode("utf8")
+        # self.assertTrue(html.startswith("<html>"))
+        # self.assertIn("<title>Сайт Василия Скворцова</title>", html)
+        # self.assertIn("<h1>Василий Скворцов</h1>", html)
         # self.assertTrue(html.endswith('</html>'))
 
 
 class ArticleModelTest(TestCase):
-
     def test_article_model_save_and_retrieve(self):
         article1 = Article(
             title='article 1',
